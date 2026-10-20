@@ -276,6 +276,60 @@ F110 vs. F-53: F-53 is used for manual outgoing payments, while F110 supports au
 3. Verify at table level (T004, FBN1, SE16N) rather than trusting a dropdown.
 4. Posting period control checks the + row first, then the specific account type.
 
+
+
+## 9. Month-End Closing : October 2026
+
+### Business Scenario
+
+Nova Retail GmbH requires a structured month-end closing process to review General Ledger balances, monitor outstanding customer and supplier items, record accrued expenses, and review financial statements for October 2026.
+
+**Company Code:** NR01  
+**Ledger:** 0L  
+**Currency:** EUR  
+**Fiscal Year:** 2026  
+**Closing Period:** October 2026
+
+### Closing Activities
+
+| Step | Activity | SAP Transaction / Tool | Objective |
+|---|---|---|---|
+| 1 | G/L balance review | FS10N / FAGLB03 | Review account balances and posting activity |
+| 2 | Supplier open-item review | FBL1N | Identify outstanding supplier invoices and payments |
+| 3 | Customer open-item review | FBL5N | Identify outstanding customer invoices and receipts |
+| 4 | Accrued expense posting | FB50 | Record expenses incurred but not yet invoiced |
+| 5 | Financial statement review | Applicable G/L reporting tools | Review Profit & Loss and Balance Sheet balances |
+| 6 | Closing checklist | Manual documentation | Record exceptions and outstanding activities |
+
+### Accrued Expense : Example
+
+**Business scenario:** Office services worth €500 were consumed during October 2026, but the supplier invoice had not been received by month-end.
+
+Illustrative accounting entry:
+
+| G/L Account | Debit | Credit |
+|---|---:|---:|
+| Office Expense — 600000 | €500 | — |
+| Accrued Expenses Liability — suitable configured account | — | €500 |
+| **Total** | **€500** | **€500** |
+
+**Proposed posting date:** 31 October 2026  
+**Proposed transaction:** FB50
+
+The liability account must be created or verified in the SAP system before posting. The entry should be simulated and checked before it is posted. If required and configured, a reversal can be scheduled for November 2026.
+
+### Expected Controls
+
+- Review G/L balances and investigate unexpected balances.
+- Identify outstanding supplier and customer items.
+- Confirm that accrual entries are supported and balanced.
+- Review financial statements for unusual movements.
+- Maintain a closing checklist and document identified exceptions.
+
+### Project Status
+
+The month-end closing workflow and illustrative accounting entries are documented as an extension of the Nova Retail GmbH FI case study. 
+
 ---
 
 
