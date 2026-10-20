@@ -1,4 +1,4 @@
-# SAP S/4HANA FI Configuration and Business Process Testing: Nova Retail GmbH
+# SAP S/4HANA FI: End-to-End Financial Accounting Implementation — Nova Retail GmbH
 
 This project documents SAP S/4HANA Financial Accounting (FI) configuration and business-process testing for the fictional company Nova Retail GmbH. The work covers foundational FI settings, Procure-to-Pay (P2P) and Order-to-Cash (O2C).
 
